@@ -2,14 +2,13 @@ from sys import last_value
 from playwright.sync_api import Page
 
 class DonationPage:
+    # Variables
     URL = 'https://qa-joeb.vermontsystems.com/wbwsc/webtrac_QATEST.wsc/donation.html'
     test_value = 100
     
+    # Constructor
     def __init__(self, page: Page):
         self.page = page
-
-    def load(self) -> None:
-        self.page.goto(self.URL) # Will error without token by design
 
     # Locators
     def __init__(self, page: Page) -> None:
@@ -30,6 +29,9 @@ class DonationPage:
         self.donation_total_fees = page.locator('cell:text("$ 100.00")').first()
 
     # Actions
+    def load(self) -> None:
+        self.page.goto(self.URL) # Will error without token by design
+        
     def check_donate_radio_button(self):
         self.donate_radio_button.check()
 

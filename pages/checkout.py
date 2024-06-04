@@ -1,6 +1,7 @@
 from playwright.sync_api import Page
 
 class CheckoutPage:
+    # Variables - CC data would be imported securely in production environment
     URL = 'https://qa-joeb.vermontsystems.com/wbwsc/webtrac_QATEST.wsc/checkout.html'
     test_cc_name = 'Amanda Lowry'
     test_cc_number = '4446 6612 3456 7892'
@@ -9,11 +10,9 @@ class CheckoutPage:
     test_cc_address = '123 Main St'
     test_cc_postal_code = '05446'
 
+    # Constructor
     def __init__(self, page: Page):
         self.page = page
-
-    def load(self) -> None:
-        self.page.goto(self.URL) # Will error without token by design
 
     # Locators
     def __init__(self, page: Page) -> None:
@@ -30,6 +29,9 @@ class CheckoutPage:
         self.continue_button = page.locator('button:text("Continue")')
 
     # Actions
+    def load(self) -> None:
+        self.page.goto(self.URL) # Will error without token by design
+        
     def click_payment_method_button(self):
         self.payment_method_button().click()
 

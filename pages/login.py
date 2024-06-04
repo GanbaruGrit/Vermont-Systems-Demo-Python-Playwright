@@ -1,15 +1,14 @@
 from playwright.sync_api import Page
 
 class LoginPage:
+    # Variables - Would normally use AWS Security key provider[AWS Secrets-manager] or Azure[AZURE Key Valut] for the key managment to import credentials
     URL = 'https://qa-joeb.vermontsystems.com/wbwsc/webtrac_QATEST.wsc/login.html'
-    username = '********' # Removed for security purposes - Would normally use AWS Security key provider[AWS Secrets-manager] or Azure[AZURE Key Valut] for the key managment
-    password = '********'
+    username = '********' # Removed for security purposes
+    password = '********' # Removed for security purposes
     
+    # Constructor
     def __init__(self, page: Page):
         self.page = page
-
-    def load(self) -> None:
-        self.page.goto(self.URL) # Will error without token by design
 
     # Locators
     def __init__(self, page: Page) -> None:
@@ -21,6 +20,9 @@ class LoginPage:
         self.login_button_post_login = page.locator('link:text("Amanda VSTest #")')
 
     # Actions
+    def load(self) -> None:
+        self.page.goto(self.URL) # Will error without token by design
+
     def click_username_field(self):
         self.username_field.click()
 

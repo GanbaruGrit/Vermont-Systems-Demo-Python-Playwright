@@ -30,7 +30,7 @@ def _get_env_var(varname: str) -> str:
 
 # Get target project
 @pytest.fixture(scope='session')
-def gh_project(
+def webtrac_project(
     webtrac_context: APIRequestContext,
     webtrac_username: str,
     webtrac_project_name: str) -> dict:
@@ -68,7 +68,7 @@ def project_column_ids(project_columns: list[dict]) -> list[str]:
 @pytest.fixture(scope='session')
 def webtrac_context(
     playwright: Playwright,
-    gh_access_token: str) -> Generator[APIRequestContext, None, None]:
+    webtrac_access_token: str) -> Generator[APIRequestContext, None, None]:
 
     headers = {
         "Accept": "application/vnd.webtrac.v3+json",

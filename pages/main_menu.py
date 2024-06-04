@@ -1,13 +1,12 @@
 from playwright.sync_api import Page
 
 class MainMenuPage:
+    # Variables
+    URL = 'https://qa-joeb.vermontsystems.com/wbwsc/webtrac_QATEST.wsc/splash.html?InterfaceParameter=WebTrac_NextGen/'
+    
+    # Constructor
     def __init__(self, page: Page):
         self.page = page
-
-    URL = 'https://qa-joeb.vermontsystems.com/wbwsc/webtrac_QATEST.wsc/splash.html?InterfaceParameter=WebTrac_NextGen/'
-
-    def load(self) -> None:
-        self.page.goto(self.URL)
 
     # Locators
     def __init__(self, page: Page) -> None:
@@ -18,6 +17,9 @@ class MainMenuPage:
         self.reprint_receipt_button = page.locator('link:text("Reprint A Receipt")')
 
     # Actions
+    def load(self) -> None:
+        self.page.goto(self.URL)
+
     def click_my_account_button(self) -> None:
         self.my_account_button.click()
 
