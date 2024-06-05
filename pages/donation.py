@@ -5,12 +5,8 @@ class DonationPage:
     # Variables
     URL = 'https://qa-joeb.vermontsystems.com/wbwsc/webtrac_QATEST.wsc/donation.html'
     test_value = 100
-    
-    # Constructor
-    def __init__(self, page: Page):
-        self.page = page
 
-    # Locators
+    # Locators + Constructor
     def __init__(self, page: Page) -> None:
         self.page = page
         self.donate_radio_button = page.locator('label:text("Check to purchase Donation (")')

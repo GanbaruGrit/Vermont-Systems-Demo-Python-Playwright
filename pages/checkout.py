@@ -10,11 +10,7 @@ class CheckoutPage:
     test_cc_address = '123 Main St'
     test_cc_postal_code = '05446'
 
-    # Constructor
-    def __init__(self, page: Page):
-        self.page = page
-
-    # Locators
+    # Locators + Constructor
     def __init__(self, page: Page) -> None:
         self.page = page
         self.payment_method_button = page.locator('button:text("Using This Payment Method:")')

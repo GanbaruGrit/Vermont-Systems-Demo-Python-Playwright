@@ -4,11 +4,7 @@ class MainMenuPage:
     # Variables
     URL = 'https://qa-joeb.vermontsystems.com/wbwsc/webtrac_QATEST.wsc/splash.html?InterfaceParameter=WebTrac_NextGen/'
     
-    # Constructor
-    def __init__(self, page: Page):
-        self.page = page
-
-    # Locators
+    # Locators + Constructor
     def __init__(self, page: Page) -> None:
         self.page = page
         self.my_account_button = page.locator('link:text("My Account Sign In / Register")')

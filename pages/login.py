@@ -6,11 +6,7 @@ class LoginPage:
     username = '********' # Removed for security purposes
     password = '********' # Removed for security purposes
     
-    # Constructor
-    def __init__(self, page: Page):
-        self.page = page
-
-    # Locators
+    # Locators + Constructor
     def __init__(self, page: Page) -> None:
         self.page = page
         self.username_field = page.locator('link:text("My Account Sign In / Register")')
