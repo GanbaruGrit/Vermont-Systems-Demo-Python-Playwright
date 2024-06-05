@@ -1,7 +1,7 @@
 # Vermont Systems Demo - Playwright Python
 This is a demo testing suite for the end-to-end donation path for the WebTrac platform.
 Notable additions from the JavaScript version:
-- A virtual environment is being used 'venv' to handle dependency packages locally.
+- A virtual environment is being used 'venv' to handle dependency packages locally. (requirements.txt added)
 - API tests added in 'test_api_project.py' to simulate seeding the database and retrieving credentials.
 - Page Object Model pattern is being used to make the tests modular and scalable.
 - Page Object Fixtures added to expand capabilities for API testing.
